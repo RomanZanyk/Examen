@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zanyk</title>
+</head>
+<body>
+
+<input type="text" id="inputNumber" onblur="calculateSum()">
+<p id="result"></p>
+
+<script>
+    function calculateSum() {
+        var inputElement = document.getElementById("inputNumber");
+        var inputValue = inputElement.value;
+
+        var sum = 0;
+
+        if (!isNaN(inputValue)) {
+            for (var i = 0; i < inputValue.length; i++) {
+                sum += parseInt(inputValue[i]);
+            }
+        }
+
+        var resultElement = document.getElementById("result");
+        resultElement.textContent = "Сума цифр: " + sum;
+    }
+</script>
+
+</body>
+</html>
